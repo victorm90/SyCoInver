@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Organismos extends Model
+{
+    use HasFactory;
+    protected $fillable = ['name'];
+
+    public function obra(){        
+        return $this->hasMany('App\Models\Obra','organismo_id', 'id');
+    }
+}
